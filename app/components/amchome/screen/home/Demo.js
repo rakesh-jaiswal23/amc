@@ -38,11 +38,11 @@ async function Demo({ role }) {
             <div className="row">
               <div className="col-lg-5">
                 <div className="left_wrapper">
-                  <img
+                  <Image
                     src={mobile.src}
                     alt={UI.ALT_APPROACH_SECTION_HOME_IMAGE}
-                    width="100%"
-                    height="100%"
+                    width={100}
+                    height={100}
                     loading="lazy"
                   />
                 </div>
@@ -86,11 +86,11 @@ async function Demo({ role }) {
                   </div>
                 </div>
                 <div className="col-lg-6">
-                  <img
+                  <Image
                     src={approach.src}
                     alt={UI.ALT_APPROACH_SECTION_HOME_IMAGE}
-                    width="100%"
-                    height="100%"
+                    width={100}
+                    height={100}
                     loading="lazy"
                   />
                 </div>

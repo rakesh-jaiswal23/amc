@@ -14,7 +14,6 @@ function BenefitsClient({ initialData }) {
   const [benefitData] = useState(initialData || []);
 
   const slidesToShow = benefitData.length >= 3 ? 3 : benefitData.length;
-  console.log(benefitData);
 
   const settings = {
     dots: false,

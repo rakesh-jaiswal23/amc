@@ -15,6 +15,7 @@ import JobTypeStatusAndTime from '../JobTypeStatusAndTime';
 import UI from '../../../constants/ui';
 import SkillRatingView from '../../../components/candidateComponent/SkillRatingView';
 import Remark from '../../../components/remark';
+import Image from 'next/image';
 
 function JobSummary(props) {
   const {
@@ -30,13 +31,15 @@ function JobSummary(props) {
   useEffect(() => {
     const updatedJobActions = getJobActions(job, isMyProfileActivity);
     setJobActions(updatedJobActions);
-  }, [job]);
+  }, [job, isMyProfileActivity]);
   return (
     <>
       <div className="d-flex">
         <div className="me-1 me-md-3 col-2">
           {job?.logo ? (
-            <img
+            <Image
+              width={100}
+              height={100}
               src={`${API_URL.PHOTO_PRE}${job.logo}`}
               alt={UI.ALT_JOB_LOGO}
               className="logo-summary-size logo"

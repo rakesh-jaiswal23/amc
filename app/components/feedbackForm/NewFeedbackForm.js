@@ -70,7 +70,7 @@ function FeedbackForm(props) {
 
   useEffect(() => {
     reset();
-  }, [isOpen]);
+  }, [isOpen, reset]);
 
   return (
     <div>

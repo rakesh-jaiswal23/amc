@@ -33,7 +33,7 @@ function EmployerReviewSortBy(props) {
       onSelectedDropDown();
       setSelected(false);
     }
-  }, [selected]);
+  }, [selected, onSelectedDropDown]);
 
   return (
     <div ref={ref} style={{ position: 'relative' }}>

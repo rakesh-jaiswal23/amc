@@ -252,7 +252,7 @@ function JobPage(props) {
           })
         );
       });
-  }, [searchParams]);
+  }, [searchParams, dispatch, structureData]);
   useEffect(() => {
     if (jobDetail) {
       const skills = JSON.parse(JSON.stringify(jobDetail.skills));
@@ -315,7 +315,7 @@ function JobPage(props) {
         }
       }
     }
-  }, [jobDetail, firstTimeShowSimilarJobs]);
+  }, [jobDetail, firstTimeShowSimilarJobs, isMobileDevice, role, searchDetails, dispatch]);
 
   const jobAction = (actionId) => {
     updateJobStateService(actionId, jobDetail, false)

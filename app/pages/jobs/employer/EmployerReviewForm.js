@@ -81,7 +81,7 @@ function EmployerReviewForm(props) {
 
   useEffect(() => {
     setValue('currentLocation', locations);
-  }, [locations]);
+  }, [locations, setValue]);
 
   useEffect(() => {
     if (companyId !== DEFAULT_COMPANY_ID) {
@@ -113,7 +113,7 @@ function EmployerReviewForm(props) {
     } else {
       setLoading(false);
     }
-  }, [companyId]);
+  }, [companyId, companyAndJobTitle, reset, setValue, dispatch]);
 
   useEffect(() => {
     if (currentStep === 2 && myRef.current) {

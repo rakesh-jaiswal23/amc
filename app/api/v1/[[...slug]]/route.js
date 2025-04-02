@@ -33,8 +33,6 @@ async function proxyRequest(request, paramsPromise) {
       agent,
     };
 
-    console.log("Proxying request to:", targetUrl);
-
     const response = await fetch(targetUrl, init);
     if (!response.ok) {
       const contentType = response.headers.get("content-type");

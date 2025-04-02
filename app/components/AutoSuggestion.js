@@ -41,7 +41,7 @@ function AutoSuggestion(props) {
         setValues(valueFromAutoSuggestion);
       }
     },
-    [values, setValues]
+    [setValues]
   );
 
   useEffect(() => {
@@ -85,12 +85,13 @@ function AutoSuggestion(props) {
         });
       }
     }
-  }, [searchKey]);
+  }, [searchKey, id, isSkillField]);
 
-  const debouncedSetSearchKey = useCallback(
-    debounce(setSearchKey, 200),
-    EMPTY_ARRAY
+  const debouncedSetSearchKey = useMemo(
+    () => debounce((value) => setSearchKey(value), 200),
+    [setSearchKey]
   );
+  
 
   const onInputChange = (event, newInputValue) => {
     if (!newInputValue.includes(',')) {

@@ -7,7 +7,6 @@ import LOGIN_TYPE from "@/app/constants/loginType";
 import config from "@/app/config/config";
 
 async function AssessmentsStats({ role }) {
-  console.log(role);
   // const [assessmentsStatsData, setAssessmentsStatsData] = useState([]);
   let assessmentsStatsData = [];
 
@@ -18,7 +17,6 @@ async function AssessmentsStats({ role }) {
       );
       if (response.ok) {
         assessmentsStatsData = await response.json();
-        console.log(assessmentsStatsData);
       } else {
         console.error(`Error fetching assessments stats: ${response.statusText}`);
       }

@@ -72,7 +72,7 @@ function EmployerReviewDetailsPopUp(props) {
           }
         >
           {categoryRatings?.map((eachItem) => (
-            <div className="d-flex align-items-center">
+            <div key={eachItem.id} className="d-flex align-items-center">
               <StarIcon
                 fontSize="inherit"
                 sx={{

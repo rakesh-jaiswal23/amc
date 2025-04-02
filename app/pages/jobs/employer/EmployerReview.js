@@ -84,7 +84,7 @@ function EmployerReview(props) {
       }));
       setVotes(updatedVotes);
     }
-  }, [data]);
+  }, [data, loginDetails]);
 
   const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 7,

@@ -75,6 +75,7 @@ import AssessmentDetailsDialog from '../../assessment/AssessmentDetailsDialog';
 import LOGIN_TYPE from '../../../constants/loginType';
 import getStarColor from '../employer/Employer.helper';
 import STORAGE_KEY from '../../../constants/storageKey';
+import Image from 'next/image';
 
 function JobDetail(props) {
   const { detail: jobDetail, onAction, isMyProfileActivity, jobPage } = props;
@@ -96,18 +97,18 @@ function JobDetail(props) {
   const [isAssessmentModalOpen, setIsAssessmentModalOpen] = useState(false);
   const [assessmentDetails, setAssessmentDetails] = useState();
 
-  const makeTitle = () => {
-    // extracting skills
+  const makeTitle = useCallback(() => {
+    // Extract skills into a comma-separated string
     let skill = '';
     jobDetail?.skills?.forEach((skillDetails, index) => {
       if (index === 0) skill = `${skillDetails.name}`;
       else skill = `${skill}, ${skillDetails.name}`;
     });
 
-    // company name
+    // Company name
     const employer = jobDetail?.employer;
 
-    // extracting experience for title and description
+    // Extract and format experience
     let experience = getExperience(jobDetail?.exp) || '';
     let descExperience = '';
     if (jobDetail?.exp === EXP_FRESHER_ID) {
@@ -118,17 +119,17 @@ function JobDetail(props) {
       experience = ` - ${experience.replace(/-/g, ' to ')} of experience`;
     }
 
-    // extrating location
+    // Extract job location(s)
     let location = '';
     jobDetail?.joblocations?.forEach((joblocation, index) => {
       if (index === 0) location = `${joblocation.shortname}`;
       else location = `${location}, ${joblocation.shortname}`;
     });
 
-    // extracting job title
+    // Extract job title
     const jobTitle = jobDetail.title;
 
-    // creating title
+    // Set the final title
     setFinalTitle(
       `${jobTitle === '' ? '' : `${jobTitle}`} - ${employer}${
         jobDetail.worklocation === REMOTE_ID ||
@@ -142,7 +143,7 @@ function JobDetail(props) {
       }`
     );
 
-    // creating description
+    // Set the final description
     setFinalDescription(
       `Job Description for ${jobTitle}${
         jobDetail.worklocation === REMOTE_ID ||
@@ -155,14 +156,14 @@ function JobDetail(props) {
         descExperience !== '' ? ` for ${descExperience}` : ''
       }. ${UI.APPLYNOW}.`
     );
-  };
+  }, [jobDetail]);
 
   useEffect(() => {
     const updatedJobActions = getJobActions(jobDetail, isMyProfileActivity);
     setJobActions(updatedJobActions);
     // creating title
     makeTitle();
-  }, [jobDetail]);
+  }, [jobDetail, isMyProfileActivity, makeTitle]);
   const handleTimelineButton = () => {
     getJobTimeline(getLoginDetailFromSession()?.entityId, jobDetail.projectid)
       .then((res) => {
@@ -286,7 +287,9 @@ function JobDetail(props) {
         <div className="d-flex justify-content-between">
           <div className="d-flex align-items-center">
             {jobDetail?.logo ? (
-              <img
+              <Image
+                width={100}
+                height={100}
                 src={`${API_URL.PHOTO_PRE}${jobDetail?.logo}`}
                 alt={UI.ALT_JOB_LOGO}
                 className="logo-detail-size logo"

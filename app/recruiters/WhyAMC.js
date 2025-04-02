@@ -6,22 +6,22 @@ import { getRequest } from "../services";
 import img6 from "@/app/assets/img-6.webp";
 import { MAINPAGE_API_URL } from "../constants/apiUrls";
 import UI from "../constants/ui";
+import Image from "next/image";
 
 function WhyAMC(props) {
   const { role } = props;
 
   const [whyamcdata, setWhyamcdata] = useState([]);
   const [activeIndex, setActiveIndex] = useState("0");
-  const fetchWhyamcData = () => {
-    getRequest(`${MAINPAGE_API_URL.MAINPAGE_WHY_AMC}${role}`).then((data) => {
-      setWhyamcdata(data);
-    });
-  };
+
   useEffect(() => {
     if (!role) return;
-    fetchWhyamcData();
+    getRequest(`${MAINPAGE_API_URL.MAINPAGE_WHY_AMC}${role}`)
+      .then((data) => {
+        setWhyamcdata(data);
+      });
   }, [role]);
-
+  
   const handleAccordionToggle = (index) => {
     setActiveIndex(index === activeIndex ? null : index);
   };
@@ -37,7 +37,7 @@ function WhyAMC(props) {
             <div className="row">
               <div className="col-lg-6">
                 <div className="left-wrapp">
-                  <img src={img6.src} alt={UI.ALT_MYCAREER_IMAGE} />
+                  <Image width={100} height={100} src={img6.src} alt={UI.ALT_MYCAREER_IMAGE} />
                 </div>
               </div>
               <div className="col-lg-6">

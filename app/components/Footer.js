@@ -31,6 +31,7 @@ import useWindowSize from "../../app/hooks/useWindowSize";
 import { MOBILE_SCREEN_WIDTH } from "../../app/constants/screenSize";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 function Footer() {
   const checkContactUs = (searchParam) => {
@@ -67,7 +68,7 @@ useEffect(() => {
         window?.removeEventListener("storage", handleStorageChange);
       }
     };
-  }, EMPTY_ARRAY);
+  }, []);
 
   const onClickOnCandidateFooterURL = (value) => {
     if(typeof window !== "undefined"){
@@ -147,11 +148,11 @@ useEffect(() => {
           <div className="col-lg-4 col-md-12 ">
             <div className="footer_logo_wrap footer_mobile_wrap">
               <div className="top-wrap">
-                <img
+                <Image
                   src={logo.src}
                   alt={UI.ALT_ALIGNMYCAREER}
-                  width="52%"
-                  height="30%"
+                  width={52}
+                  height={30}
                   loading="lazy"
                   title={UI.ALT_ALIGNMYCAREER}
                 />

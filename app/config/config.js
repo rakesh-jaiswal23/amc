@@ -1,5 +1,4 @@
 // const isLocal = process.env.NODE_ENV === 'development';
-// console.log(isLocal)
 // Define your production configuration
 const config = {
   API_BASE: "https://demo.alignmycareer.com/api/v1",

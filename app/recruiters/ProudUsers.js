@@ -4,6 +4,7 @@ import { MAINPAGE_API_URL } from "../constants/apiUrls";
 
 import UI from "../constants/ui";
 import config from "../config/config";
+import Image from "next/image";
 
 async function ProudUsers() {
   // const [prouduserdata, setProuduserdata] = useState([]);
@@ -35,7 +36,9 @@ async function ProudUsers() {
               {prouduserdata.map((prouduser, index) => (
                 <div className="col-lg-3 col-md-6 col-sm-6 col-12" key={index}>
                   <div className="inner_card">
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src={prouduser.companylogo}
                       alt={UI.ALT_PROUDUSERS_LOGO}
                     />

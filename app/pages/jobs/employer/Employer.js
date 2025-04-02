@@ -31,6 +31,8 @@ import { getPostedJob } from '../jobs.service';
 import STORAGE_KEY from '../../../constants/storageKey';
 import EmployerCompayReviewInputField from './EmployerCompayReviewInputField';
 import { getTabs } from './Employer.helper';
+import s from '@/build/server/app/api/v1/[[...slug]]/route';
+import Image from 'next/image';
 
 function Employer(props) {
   const { setShowNavBar } = props;
@@ -42,8 +44,8 @@ function Employer(props) {
     !loginDetails
       ? getTabs()
       : loginDetails?.role === LOGIN_TYPE.CANDIDATE
-      ? getTabs()
-      : getTabs(true)
+        ? getTabs()
+        : getTabs(true)
   );
 
   const getInitialSelectedTab = () => {
@@ -107,11 +109,11 @@ function Employer(props) {
         SORT_BY.RELEVANCE
       );
     }
-  }, [companyAndEmpolyerIdParam]);
+  }, [companyAndEmpolyerIdParam, selectedPage, loginDetails]);
 
   useEffect(() => {
     setShowNavBar(true);
-  }, EMPTY_ARRAY);
+  }, [setShowNavBar]);
 
   useEffect(() => {
     if (employerDetail !== EMPTY_OBJECT) {
@@ -125,7 +127,7 @@ function Employer(props) {
     }
   }, [employerDetail]);
 
-  const getTheEmployerDeatilsAndTabs = (res) => {
+  const getTheEmployerDeatilsAndTabs = useCallback((res) => {
     setCompanyNameAndId({
       id: res?.companyid,
       name: res?.name,
@@ -137,7 +139,7 @@ function Employer(props) {
         name: res?.name,
       })
     );
-
+  
     if (res?.id) {
       if (loginDetails?.role === LOGIN_TYPE.CANDIDATE) {
         setTabs(getTabs());
@@ -156,35 +158,36 @@ function Employer(props) {
       setTabs(getTabs(false, true));
       setSelectedTab(3);
     }
-  };
+  }, [loginDetails, setTabs, setSelectedTab, setEmployerDetail, setCount]);  
 
-  const getEmployerDeatilsBasedOnEmployerAndCompany = () => {
-    if (companyAndEmpolyerIdParam?.companyId) {
-      setEmployerDetailLoading(true);
-      getRequest(`employer/company/${companyAndEmpolyerIdParam?.companyId}`)
-        .then((res) => {
-          getTheEmployerDeatilsAndTabs(res);
-        })
-        .finally(() => setEmployerDetailLoading(false));
-    }
-    if (companyAndEmpolyerIdParam?.employerId) {
-      getEmployerDetail(companyAndEmpolyerIdParam?.employerId)
-        .then((res) => {
-          getTheEmployerDeatilsAndTabs(res);
-        })
-        .finally(() => setEmployerDetailLoading(false));
-    }
-  };
+  const getEmployerDeatilsBasedOnEmployerAndCompany = useMemo(() => {
+    return () => {
+      if (companyAndEmpolyerIdParam?.companyId) {
+        setEmployerDetailLoading(true);
+        getRequest(`employer/company/${companyAndEmpolyerIdParam?.companyId}`)
+          .then((res) => {
+            getTheEmployerDeatilsAndTabs(res);
+          })
+          .finally(() => setEmployerDetailLoading(false));
+      }
+      if (companyAndEmpolyerIdParam?.employerId) {
+        getEmployerDetail(companyAndEmpolyerIdParam?.employerId)
+          .then((res) => {
+            getTheEmployerDeatilsAndTabs(res);
+          })
+          .finally(() => setEmployerDetailLoading(false));
+      }
+    };
+  }, [companyAndEmpolyerIdParam, getTheEmployerDeatilsAndTabs]);
+
+
   useEffect(() => {
-    if (
-      companyAndEmpolyerIdParam?.companyId ||
-      companyAndEmpolyerIdParam?.employerId
-    ) {
+    const { companyId, employerId } = companyAndEmpolyerIdParam;
+    if (companyId || employerId) {
       getEmployerDeatilsBasedOnEmployerAndCompany();
     }
-  }, [
-    companyAndEmpolyerIdParam.companyId || companyAndEmpolyerIdParam.employerId,
-  ]);
+  }, [companyAndEmpolyerIdParam.companyId, companyAndEmpolyerIdParam.employerId, companyAndEmpolyerIdParam, getEmployerDeatilsBasedOnEmployerAndCompany]);
+
 
   const paginationRequestToServer = (page) => {
     getJobEmployer(
@@ -204,7 +207,7 @@ function Employer(props) {
     setSelectedPage(DEFAULT_SELECTED_PAGE);
   };
 
-  const getReviewsData = () => {
+  const getReviewsData = useCallback(() => {
     if (companyNameAndId && companyNameAndId?.id) {
       getRequest(`review/${companyNameAndId?.id}/reviews`)
         .then((res) => {
@@ -224,43 +227,48 @@ function Employer(props) {
           setShouldReloadAfterReview(false);
         });
     }
-  };
+  }, [companyNameAndId, dispatch, setShouldReloadAfterReview]);
 
-  const getReviewSummary = (value) => {
-    if (value) {
-      setLoading(true);
-      getRequest(`review/${value}/ratings-summary`)
-        .then((res) => {
-          setSummaryData(res);
-          setTotalReviewsCount(res?.totalReviews);
-          getReviewsData();
-        })
-        .catch((err) => {
-          dispatch(
-            showSnackBar({
-              setopen: true,
-              message: err?.msg,
-              severity: 'error',
-            })
-          );
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    }
-  };
+
+  const getReviewSummary = useMemo(() => {
+    return (value) => {
+      if (value) {
+        setLoading(true);
+        getRequest(`review/${value}/ratings-summary`)
+          .then((res) => {
+            setSummaryData(res);
+            setTotalReviewsCount(res?.totalReviews);
+            getReviewsData();
+          })
+          .catch((err) => {
+            dispatch(
+              showSnackBar({
+                setopen: true,
+                message: err?.msg,
+                severity: 'error',
+              })
+            );
+          })
+          .finally(() => {
+            setLoading(false);
+          });
+      }
+    };
+  }, [dispatch, getReviewsData]);
+
 
   useEffect(() => {
     if (shouldReloadAfterReview) {
       getReviewSummary(companyNameAndId?.id);
     }
-  }, [shouldReloadAfterReview]);
+  }, [shouldReloadAfterReview, companyNameAndId?.id, getReviewSummary]);
 
   useEffect(() => {
-    if (companyNameAndId !== EMPTY_OBJECT && companyNameAndId?.id !== -1) {
+    if (shouldReloadAfterReview) {
       getReviewSummary(companyNameAndId?.id);
     }
-  }, [companyNameAndId]);
+  }, [shouldReloadAfterReview, companyNameAndId?.id, getReviewSummary]);
+
 
   const getReviwesBasedOnPaginationAndSortBy = (page) => {
     setReviewsDataLoading(true);
@@ -372,9 +380,11 @@ function Employer(props) {
         <div className="d-flex justify-content-between align-items-center">
           <div className="px-3 mt-3">
             {employerDetail?.logo ? (
-              <img
+              <Image
                 src={`${API_URL.PHOTO_PRE}${employerDetail?.logo}`}
                 alt={UI.ALT_EMPLOYER_LOGO}
+                width={100}
+                height={100}
                 className="logo-detail-size logo"
               />
             ) : (
@@ -402,13 +412,12 @@ function Employer(props) {
                   return (
                     <Tab
                       key={index}
-                      label={`${val.value} ${
-                        val.id === 3
-                          ? `(${totalReviewsCount || 0})`
-                          : val.id === 2
+                      label={`${val.value} ${val.id === 3
+                        ? `(${totalReviewsCount || 0})`
+                        : val.id === 2
                           ? `(${count})`
                           : ''
-                      }`}
+                        }`}
                       value={val.id}
                     />
                   );
