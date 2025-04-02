@@ -1,0 +1,29 @@
+import ENUM_TYPE from '../constants/enumType';
+import { getFilterByAction, getAllowedRoles } from './base.bootstrap';
+
+export const PERMISSIONS_ACTIONS = {
+  UPDATE_CANDIDATE: 'UPDATE_CANDIDATE',
+  UPDATE_JOB: 'UPDATE_JOB',
+  RESUME_DOWNLOAD: 'RESUME_DOWNLOAD',
+  ASS_REPORT_DOWNLOAD: 'ASS_REPORT_DOWNLOAD',
+  COUPON_APPLY: 'COUPON_APPLY',
+  TXN_HISTORY: 'TXN_HISTORY',
+  PAYMENT: 'PAYMENT',
+  INVOICE_DOWNLOAD: 'INVOICE_DOWNLOAD',
+  VIEW_PROJECT: 'VIEW_PROJECT',
+  EDIT_PROJECT: 'EDIT_PROJECT',
+  ADD_USER: 'ADD_USER',
+  REMOVE_USER: 'REMOVE_USER',
+  APPROVE_USER: 'APPROVE_USER',
+  REQUEST_OWNERSHIP: 'REQUEST_OWNERSHIP',
+  TRANSFER_OWNERSHIP: 'TRANSFER_OWNERSHIP',
+  DELETE_PROJECT: 'DELETE_PROJECT',
+  INTRO_PLAY: 'INTRO_PLAY',
+  UPDATE_ASSESSMENT: 'UPDATE_ASSESSMENT',
+};
+
+export const getAllowedRolesForAction = (filterType) => {
+  const filterByAction = getFilterByAction(ENUM_TYPE.PERMISSIONS);
+  const filter = filterByAction?.[filterType];
+  return getAllowedRoles(filter);
+};

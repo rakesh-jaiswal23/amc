@@ -1,0 +1,450 @@
+.time-consuming-sec.recruiters_heading {
+  padding-top: 225px;
+}
+
+.time-consuming-sec.recruiters_heading .section-heading .section_head {
+  position: absolute;
+  top: -148px;
+  right: -244px;
+  max-width: 100%;
+  font-size: 34px;
+}
+
+.recruiters_approach .approach_section .left_inner p {
+  color: #000;
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 53px;
+  /* text-transform: capitalize; */
+}
+
+.align_my_career_section {
+  padding: 70px 0;
+}
+
+.align_my_career_section .right-wrapp .accordion-header .accordion-button {
+  color: #1a1a1a;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+  /* text-transform: capitalize; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 15px 15px;
+}
+
+.align_my_career_section .right-wrapp .accordion-header .accordion-button i {
+  text-align: right;
+  transition: all 0.5s ease;
+}
+
+.align_my_career_section
+  .right-wrapp
+  .accordion-header
+  .accordion-button[aria-expanded='true']
+  i {
+  transform: rotate(180deg);
+}
+
+.align_my_career_section .right-wrapp .accordion-item {
+  border-image: linear-gradient(#511de245, #cc4a4a75) 30;
+  border-width: 2px;
+  border-style: solid;
+  margin: 0 0 7px;
+  border-radius: 5px !important;
+}
+
+.align_my_career_section .right-wrapp .accordion-item .accordion-body {
+  padding: 0 15px;
+}
+
+.align_my_career_section .right-wrapp .accordion-item .accordion-body p {
+  color: #414040;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 27px;
+}
+
+.align_my_career_section .accordion-button:not(.collapsed) {
+  color: var(--bs-accordion-active-color);
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  border: 0;
+  box-shadow: none;
+}
+
+.accordion-button::after {
+  display: none;
+}
+
+/* ====recruitment-software-sec=== */
+
+.recruitment-software-sec .inner_card {
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: #fafdff;
+  padding: 20px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.recruitment-software-sec .inner_card:hover {
+  box-shadow: 3px 4px 10px #d0cdcd;
+}
+
+.recruitment-software-sec .inner_card img {
+  margin-bottom: 30px;
+}
+
+.recruitment-software-sec .inner_card p {
+  color: #414040;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 27px;
+}
+
+.skills_intelligence.achieve-skills {
+  padding-top: 50px;
+}
+
+.skills_intelligence.achieve-skills .skills_intelligence .row {
+  margin-top: 0;
+}
+
+.skills_intelligence.achieve-skills
+  .skills_intelligence
+  .row
+  .Intelligence_card {
+  border-radius: 33px;
+  width: 80%;
+  margin: auto;
+  margin-top: 77px;
+}
+
+.gray_arrow.TopCenter {
+  top: 53% !important;
+}
+
+.full-body-tab
+  .success_story_section.success_story_slider
+  .story_slider
+  .slide
+  .row
+  .slide-img
+  img.testimonial_logo {
+  width: 55%;
+  border-radius: 0;
+}
+
+/* ====-=======responsive-css====== */
+
+@media (max-width: 1299px) {
+  .slide-arrow.prev-arrow.gray_arrow.TopCenter {
+    left: 0%;
+  }
+
+  .slide-arrow.next-arrow.gray_arrow.TopCenter {
+    right: 0%;
+  }
+}
+
+@media (max-width: 1199px) {
+  .time-consuming-sec.recruiters_heading .section-heading .section_head {
+    top: -156px;
+    right: -157px;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 991px) {
+  .time-consuming-sec.recruiters_heading .section-heading .section_head {
+    top: 0;
+    font-size: 30px;
+    right: inherit;
+    position: relative;
+  }
+
+  .time-consuming-sec.recruiters_heading {
+    padding-top: 62px;
+  }
+
+  .align_my_career_section .right-wrapp {
+    margin-top: 20px;
+  }
+
+  .align_my_career_section {
+    padding: 70px 0 21px;
+  }
+
+  .recruitment-software-sec .inner_card {
+    margin-bottom: 22px;
+  }
+
+  .skills_intelligence.achieve-skills {
+    padding-top: 0px;
+    padding-bottom: 31px;
+  }
+
+  .skills_intelligence.achieve-skills .Intelligence_card .Intelligence_img {
+    margin-top: -70px;
+  }
+
+  .skills_intelligence.achieve-skills
+    .skills_intelligence
+    .row
+    .Intelligence_card {
+    width: 89%;
+    margin-bottom: 46px;
+    height: 345px;
+  }
+
+  .testimonials_slide {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 767px) {
+}
+
+@media (max-width: 575px) {
+  .time-consuming-sec.recruiters_heading .section-heading .section_head {
+    font-size: 28px;
+    line-height: 35px;
+  }
+
+  .time-consuming-sec.recruiters_heading {
+    padding-top: 48px;
+    padding-bottom: 21px;
+  }
+
+  .recruiters_approach .approach_section .left_inner p {
+    font-size: 42px;
+    line-height: 50px;
+  }
+
+  .recruiters_approach .approach_section .left_inner p {
+    font-size: 38px;
+    line-height: 48px;
+  }
+
+  .approach_section {
+    padding: 20px 0;
+  }
+
+  .testimonials_slide {
+    padding-bottom: 0;
+  }
+
+  .testimonials_slide .success_story_section.success_story_slider {
+    margin-bottom: 60px;
+  }
+
+  .skills_intelligence.achieve-skills
+    .skills_intelligence
+    .row
+    .Intelligence_card {
+    width: 89%;
+    margin-bottom: 17px;
+    height: auto;
+    padding-bottom: 47px;
+  }
+
+  .skills_intelligence.achieve-skills {
+    padding-top: 0px;
+    padding-bottom: 62px;
+  }
+
+  .testimonials_slide .success_story_section.success_story_slider.rec-slide {
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills_intelligence.achieve-skills
+    .skills_intelligence
+    .row
+    .Intelligence_card {
+    width: 100%;
+  }
+
+  .time-consuming-sec.recruiters_heading .section-heading .section_head {
+    font-size: 23px;
+    line-height: 29px;
+  }
+
+  .time-consuming-sec .right-para p {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .align_my_career_section .right-wrapp .accordion-header .accordion-button {
+    font-size: 18px;
+  }
+
+  .recruiters_approach .approach_section .left_inner p {
+    font-size: 28px;
+    line-height: 35px;
+  }
+
+  .recruiters_approach .approach_section .left_inner {
+    padding-left: 9px;
+  }
+
+  .recruitment-software-sec .inner_card img {
+    margin-bottom: 17px;
+    width: 69%;
+  }
+
+  .skills_intelligence.achieve-skills
+    .skills_intelligence
+    .row
+    .Intelligence_card:hover {
+    transform: translateY(0);
+  }
+
+  .skills_intelligence.achieve-skills
+    .skills_intelligence
+    .row
+    .Intelligence_card {
+    width: 99%;
+    margin-top: 51px;
+  }
+
+  .skills_intelligence .Intelligence_card .Intelligence_img img {
+    width: 42%;
+  }
+
+  .skills_intelligence .Intelligence_card .Intelligence_img {
+    height: 80px;
+    width: 80px;
+    margin-bottom: 17px;
+    margin-top: -59px !important;
+  }
+
+  .skills_intelligence .Intelligence_card h6 {
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 10px;
+  }
+
+  .recruitment-software-sec .inner_card p {
+    font-size: 17px;
+    line-height: 25px;
+  }
+
+  .time-consuming-sec .section-heading .section_head {
+    margin-bottom: 9px;
+    line-height: 35px;
+    font-size: 27px;
+  }
+
+  .top_companies .companies_card {
+    height: 141px;
+  }
+  .top_companies .companies_card.pink_card {
+    height: 141px;
+  }
+
+  .job_opportunitie .right_wrapper p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .full-body-tab .card_section .card_wrap .card {
+    padding: 20px 24px 12px;
+  }
+
+  .skills_intelligence .Intelligence_card:hover {
+    transform: translateX(0);
+  }
+
+  .skills_intelligence .Intelligence_card {
+    height: 206px;
+    margin-bottom: 26px;
+  }
+
+  .skills_intelligence .Intelligence_card p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .success_story_section.success_story_slider {
+    margin-bottom: 30px;
+    margin-top: -37px;
+  }
+
+  .latest_blog.Blog_comp {
+    margin-top: 12px;
+  }
+
+  .full-body-tab
+    .success_story_section.success_story_slider
+    .story_slider
+    .slide
+    .row
+    .slide-img
+    img.testimonial_logo {
+    width: 45%;
+    height: auto;
+  }
+
+  .full-body-tab
+    .success_story_section.success_story_slider
+    .story_slider
+    ul.slick-dots {
+    bottom: -40px;
+    left: 0%;
+  }
+}
+
+@media (max-width: 380px) {
+  .recruiters_approach .approach_section .left_inner p {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .testimonials_slide .success_story_slider .slide .slide-img img {
+    width: 45%;
+    height: 35px;
+    margin-bottom: 5px;
+  }
+
+  .full-body-tab.testimonials_slide
+    .success_story_section.success_story_slider
+    .story_slider
+    .slide
+    .row
+    .slide-img
+    img {
+    width: 24%;
+    height: auto;
+  }
+
+  .align_my_career_section .right-wrapp .accordion-header .accordion-button {
+    font-size: 16px;
+  }
+
+  .full-body-tab.testimonials_slide
+    .success_story_section.success_story_slider
+    .story_slider
+    .slide
+    .row
+    .slide-img
+    img {
+    width: 58%;
+  }
+
+  .full-body-tab
+    .success_story_section.success_story_slider
+    .story_slider
+    ul.slick-dots {
+    bottom: -28px;
+  }
+}

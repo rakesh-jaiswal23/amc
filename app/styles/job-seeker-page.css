@@ -1,0 +1,545 @@
+.job_opportunitie {
+  padding: 40px 0 30px;
+}
+
+.job_opportunitie .row {
+  align-items: center;
+}
+
+.job_opportunitie .right_wrapper {
+  padding-left: 59px;
+}
+
+.job_opportunitie .right_wrapper p {
+  color: #414040;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  margin-bottom: 3px;
+}
+
+.read_blog {
+  color: white;
+}
+.read_blog:hover {
+  color: #000 !important;
+}
+.job_opportunitie .right_wrapper a {
+  margin-top: 20px;
+}
+
+.job_opportunitie .section-heading .section_head,
+.section_head {
+  max-width: 85%;
+}
+
+/* ======rebon=== */
+
+.rebon {
+  border-radius: 20px 20px 20px 20px;
+  background: linear-gradient(180deg, #0a8fff 0%, #a4d6ff 100%);
+  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.25);
+  padding: 40px;
+  margin: 30px 0;
+}
+
+.rebon .rebon_inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.rebon p {
+  color: #000;
+  text-align: center;
+  font-size: 43px;
+  font-weight: 500;
+  line-height: 49px;
+  /* text-transform: capitalize; */
+}
+
+/* ====skills_intelligence=== */
+
+.skills_intelligence {
+  margin-bottom: 71px;
+}
+
+.skills_intelligence .Intelligence_card {
+  border-radius: 25px;
+  background: #e0f3ff;
+  display: flex;
+  justify-content: initial;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 20px;
+  position: relative;
+  height: 366px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  margin: 33px 0;
+}
+
+.skills_intelligence .Intelligence_card:hover {
+  transform: translateY(-20px);
+}
+
+.skills_intelligence .Intelligence_card .Intelligence_img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: -69px;
+  margin-bottom: 27px;
+}
+
+.skills_intelligence .Intelligence_card .Intelligence_img img {
+  width: 50%;
+}
+
+.skills_intelligence .Intelligence_card h6 {
+  color: #000;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 34px;
+  margin-bottom: 10px;
+}
+
+.skills_intelligence .Intelligence_card p {
+  color: #414040;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+  margin: 0;
+}
+
+.skills_intelligence .row {
+  margin-top: 60px;
+}
+
+/* ====time-consuming-sec==== */
+
+.time-consuming-sec {
+  padding: 184px 0 50px;
+}
+
+.time-consuming-sec .section-heading {
+  position: relative;
+}
+
+.time-consuming-sec .section-heading .section_head {
+  position: absolute;
+  top: -145px;
+  left: 0;
+  max-width: 100%;
+  font-size: 41px;
+}
+
+.time-consuming-sec .right-para {
+  padding-left: 20px;
+}
+
+.time-consuming-sec .right-para p {
+  color: #414040;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  width: 100%;
+}
+
+.full-body-tab .success_story_section.success_story_slider .story_slider {
+  width: 90%;
+}
+
+.full-body-tab
+  .success_story_section.success_story_slider
+  .story_slider
+  .slide
+  .row {
+  width: 90%;
+}
+
+.full-body-tab
+  .success_story_section.success_story_slider
+  .story_slider
+  .slide
+  .row
+  .slide-img {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.full-body-tab
+  .success_story_section.success_story_slider
+  .story_slider
+  .slide
+  .row
+  .slide-img
+  h6 {
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  margin: 0;
+}
+
+.full-body-tab
+  .success_story_section.success_story_slider
+  .story_slider
+  .slide
+  .row
+  .slide-img
+  p {
+  color: #585858;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+  text-align: left;
+  margin: 0;
+}
+
+.full-body-tab
+  .success_story_section.success_story_slider
+  .story_slider
+  ul.slick-dots {
+  bottom: -52px;
+  left: 7%;
+}
+
+.full-body-tab
+  .success_story_section.success_story_slider
+  .story_slider
+  .slick-dots
+  li {
+  width: 27%;
+  height: 3px;
+  margin: 0 0px;
+  padding: 0;
+  transition: all 0.5s ease;
+}
+
+.full-body-tab
+  .success_story_section.success_story_slider
+  .story_slider
+  ul.slick-dots
+  li
+  button {
+  border-radius: 0%;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  transition: all 0.5s ease;
+}
+
+.full-body-tab
+  .success_story_section.success_story_slider
+  .story_slider
+  .slide
+  .row
+  .slide-img
+  img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+}
+
+.full-body-tab .success_story_section .story_slider {
+  width: 64%;
+  margin: auto;
+}
+
+.full-body-tab .success_story_section .story_slider .slide .row {
+  width: 78%;
+  margin: auto;
+  border-radius: 10px;
+  background: #edf8ff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 33px 5px;
+  align-items: center;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  /* height: 283px; */
+}
+
+/* .slide-content{
+  margin-left: 12px;
+} */
+.full-body-tab .success_story_section .story_slider .slide .slide-content h6 {
+  color: #000;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 110%;
+  margin-bottom: 4px;
+}
+
+.full-body-tab .success_story_section .story_slider .slide .slide-content span {
+  color: #585858;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.full-body-tab .success_story_section .story_slider .slide .slide-content p {
+  color: #414040;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 0;
+  margin-top: 9px;
+}
+
+.full-body-tab
+  .success_story_section
+  .story_slider
+  .slide
+  .slide-content
+  .testimonials-img {
+  width: 20%;
+}
+
+/* ====-=======responsive-css====== */
+
+@media (max-width: 1199px) {
+  .time-consuming-sec .section-heading .section_head {
+    font-size: 37px;
+  }
+
+  .top_companies .companies_card h6 {
+    font-size: 23px;
+    line-height: 28px;
+  }
+
+  .skills_intelligence .Intelligence_card {
+    height: 347px;
+  }
+}
+
+@media (max-width: 1099px) {
+  .time-consuming-sec .section-heading .section_head {
+    font-size: 32px;
+  }
+
+  .full-body-tab .success_story_section .story_slider .slide .slide-content p {
+    font-size: 15px;
+    line-height: 22px;
+    margin-top: 9px;
+  }
+}
+
+@media (max-width: 991px) {
+  .time-consuming-sec .section-heading .section_head {
+    font-size: 39px;
+    right: auto;
+    position: relative;
+    top: 0;
+  }
+
+  .full-body-tab .success_story_section .story_slider {
+    width: 100%;
+  }
+
+  .time-consuming-sec .right-para {
+    padding-left: 0px;
+  }
+
+  .time-consuming-sec {
+    padding: 70px 0 22px;
+  }
+
+  .job_opportunitie .section-heading .section_head,
+  .section_head {
+    max-width: 100%;
+  }
+
+  .job_opportunitie .right_wrapper {
+    padding-left: 10px;
+    padding-top: 27px;
+  }
+
+  .skills_intelligence .Intelligence_card .Intelligence_img {
+    margin-top: -73px;
+  }
+
+  .skills_intelligence .Intelligence_card {
+    height: 366px;
+  }
+
+  .skills_intelligence .Intelligence_card {
+    margin-bottom: 67px;
+  }
+
+  .skills_intelligence {
+    margin-bottom: 1px;
+    margin-top: 15px;
+  }
+
+  .full-body-tab
+    .success_story_section.success_story_slider
+    .story_slider
+    .slide
+    .row
+    .slide-img
+    img {
+    width: 20%;
+  }
+
+  .success_story_slider .section-heading {
+    margin-bottom: 0;
+  }
+
+  .success_story_section.success_story_slider {
+    margin-bottom: 80px;
+  }
+
+  .slide-arrow.prev-arrow.review-arrow {
+    bottom: -19%;
+    left: 4%;
+  }
+
+  .slide-arrow.next-arrow.review-arrow {
+    bottom: -19%;
+    left: 12%;
+  }
+
+  .rebon p {
+    font-size: 30px;
+    line-height: 35px;
+  }
+
+  .time-consuming-sec .right-para p {
+    margin-top: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .skills_intelligence .Intelligence_card .Intelligence_img {
+    margin-top: -77px;
+  }
+
+  .skills_intelligence .Intelligence_card {
+    justify-content: initial;
+    height: 337px;
+  }
+
+  .rebon p {
+    font-size: 26px;
+    line-height: 27px;
+  }
+
+  .full-body-tab .success_story_section .story_slider .slide .row {
+    height: auto;
+    width: 100%;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@media (max-width: 575px) {
+  .time-consuming-sec .section-heading .section_head {
+    margin-bottom: 14px;
+    line-height: 41px;
+    font-size: 35px;
+  }
+
+  .time-consuming-sec .right-para p {
+    width: 100%;
+    margin-top: 14px;
+  }
+
+  .time-consuming-sec {
+    padding: 39px 0 0px;
+  }
+
+  .job_opportunitie {
+    padding: 17px 0 0px;
+  }
+
+  .video_section.video_comp {
+    padding: 0 0 40px;
+  }
+
+  .skills_intelligence .Intelligence_card {
+    justify-content: initial;
+    height: 212px;
+    margin-bottom: 76px;
+  }
+
+  .banner.banner-inner {
+    height: 230px !important;
+  }
+
+  .full-body-tab
+    .success_story_section.success_story_slider
+    .story_slider
+    .slide
+    .row {
+    width: 98%;
+  }
+
+  .latest_blog.Blog_comp {
+    margin-top: 50px;
+  }
+
+  .rebon {
+    border-radius: 0;
+    padding: 28px;
+    margin: 0px 0 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-arrow.next-arrow.review-arrow {
+    left: 16%;
+  }
+
+  .success_story_section.success_story_slider {
+    margin-bottom: 80px;
+    margin-top: -37px;
+  }
+
+  .rebon p {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 11px;
+  }
+
+  .top_companies .companies_card h6 {
+    font-size: 19px;
+    line-height: 22px;
+  }
+  .full-body-tab .success_story_section .story_slider .slide .row {
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@media (max-width: 380px) {
+  .time-consuming-sec .section-heading .section_head {
+    margin-bottom: -11px;
+    line-height: 36px;
+    font-size: 27px;
+  }
+
+  .skills_intelligence .Intelligence_card {
+    height: 250px;
+  }
+
+  .full-body-tab
+    .success_story_section.success_story_slider
+    .story_slider
+    .slide
+    .row
+    .slide-img
+    img {
+    width: 20%;
+    height: 59px;
+  }
+}

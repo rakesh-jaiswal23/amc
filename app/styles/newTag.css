@@ -1,0 +1,59 @@
+.newTag {
+    border-radius: 5px;
+    background-color: #e7549d;
+    font-weight: 700;
+    color: #fff !important;
+    font-size: 0.775rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .newTag::after {
+    content: '';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    -webkit-filter: brightness(1.2);
+    filter: brightness(1.2);
+    background: linear-gradient(
+      90deg,
+      rgba(247, 237, 202, 0) 0,
+      rgba(247, 237, 202, 0.03) 1%,
+      rgba(247, 237, 202, 0.6) 30%,
+      rgba(247, 237, 202, 0.85) 50%,
+      rgba(247, 237, 202, 0.85) 70%,
+      rgba(247, 237, 202, 0.85) 71%,
+      rgba(247, 237, 202, 0)
+    );
+    width: 20%;
+    height: 100%;
+    -webkit-transform: skew(-10deg, 0deg);
+    transform: skew(-10deg, 0deg);
+    -webkit-animation: newTag 3s;
+    animation: newTag 3s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+  }
+  
+  @keyframes newTag {
+    0% {
+      left: 0;
+      opacity: 0;
+    }
+    5% {
+      opacity: 0.1;
+    }
+    48% {
+      opacity: 0.4;
+    }
+    80% {
+      opacity: 0.1;
+    }
+    100% {
+      left: 82%;
+    }
+  }
+  

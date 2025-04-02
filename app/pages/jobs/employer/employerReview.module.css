@@ -1,0 +1,19 @@
+.MuiInputBase-root-MuiInput-root::before {
+  border-bottom: 1px solid white !important;
+}
+
+.sticky-top:first-child {
+  border-bottom: 1px solid grey;
+}
+
+@keyframes upvoteAnimation {
+  0% {
+    color: lightgray; /* Initial color */
+  }
+  50% {
+    color: #faaf00; /* Intermediate color */
+  }
+  100% {
+    color: lightgray; /* Final color */
+  }
+}

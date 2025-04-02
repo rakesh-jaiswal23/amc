@@ -1,0 +1,130 @@
+@media (max-width: 1299px) {
+  .container {
+    max-width: 1199px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .container {
+    max-width: 1099px;
+  }
+
+  .full-body-tab .card_slider .slides_card .partner-slide .slide__text {
+    height: 470px !important;
+  }
+}
+
+@media (max-width: 1099px) {
+  .container {
+    max-width: 991px;
+  }
+
+  .slide .slide__text {
+    width: 84%;
+  }
+
+  .banner .banner_input {
+    width: 88% !important;
+    left: 6% !important;
+    padding: 10px 7px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .nav_toggler {
+    display: block;
+    position: relative;
+    top: 9px;
+  }
+
+  .container {
+    max-width: 700px;
+  }
+
+  .banner .slide .slide__text h2 {
+    font-size: 50px;
+    line-height: 53px;
+    margin-bottom: 9px;
+  }
+
+  .section-heading .section_head br,
+  .section_head br {
+    display: none;
+  }
+
+  .section-heading .section_head,
+  .section_head {
+    font-size: 37px;
+    line-height: 45px;
+    max-width: 100%;
+  }
+
+  .full-body-tab .employees_tab .tab-content .employee_tab .right_wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  .full-body-tab .success_story_section .story_slider .slide-img img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .full-body-tab .employees_tab .tab-content .employee_tab .right_wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  .full-body-tab .employees_tab .nav-pills .nav-item .nav-link {
+    font-size: 16px;
+    padding-right: 3px;
+  }
+
+  .full-body-tab .card_section .card_wrap .card {
+    margin-bottom: 22px;
+    width: 100%;
+  }
+
+  .full-body-tab .client_section {
+    padding: 45px 20px 43px 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 575px) {
+  .container {
+    max-width: 550px;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    max-width: 550px;
+    padding: 0 15px;
+  }
+
+  .theme_header .navbar-brand {
+    width: 70%;
+    margin: 0;
+  }
+
+  .theme_header .navbar-brand img {
+    width: 75%;
+  }
+
+  .navbar-toggler-icon {
+    width: 2.2em;
+    height: 1.3em;
+  }
+}
+@media (min-width: 992px) {
+  .nav_toggler {
+    display: none !important;
+  }
+
+}

@@ -1,0 +1,4 @@
+export const MOBILE_SCREEN_WIDTH = 768;
+export const SMALL_MOBILE_SCREEN_WIDTH = 440;
+export const TABLET_SCREEN_WIDTH = 1024;
+export const SMALL_SCREEN_DESKTOP = 1200;
