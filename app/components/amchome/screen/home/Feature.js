@@ -58,7 +58,7 @@ async function Feature({ role }) {
                   )}
                   <p>{featureone.description}</p>
                   <Link
-                    href={URL.ASSESSMENT}
+                    href={`${config.ROUTE_BASE}${URL.ASSESSMENT}`}
                     rel="noopener noreferrer"
                     className="white-btn"
                   >
@@ -94,7 +94,7 @@ async function Feature({ role }) {
                   )}
                   <p>{featuretwo.description}</p>
                   <Link
-                    href={URL.MOCK_INTERVIEW}
+                    href={`${config.ROUTE_BASE}${URL.MOCK_INTERVIEW}`}
                     rel="noopener noreferrer"
                     className="white-btn"
                   >

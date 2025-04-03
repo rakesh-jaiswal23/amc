@@ -3,7 +3,7 @@ import styles from "./NewTag.module.css";
 
 function NewTag({ paddingValue }) {
   return (
-    <span className={styles.newTag} style={{ padding: paddingValue || "4px" }}>
+    <span className={styles.newTag} style={{ padding: paddingValue || "2px" }}>
       New
     </span>
   );

@@ -7,7 +7,7 @@ import ReduxProvider from "./redux/ReduxProvider";
 import Footer from "./components/Footer";
 import { ProvideTheme } from "@/app/config/muiconfig";
 import FontAwesomeLoader from "./config/fontloader";
-import Header from "./components/header";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,15 +35,13 @@ export default function RootLayout({ children }) {
         <FontAwesomeLoader />
       </head>
       <ReduxProvider>
+            {/* <ProvideTheme> */}
           <body className={`${geistSans.variable} ${geistMono.variable}`}>
-            {/* <div className="header-css">
-              <Header />
-              </div> */}
-              <ProvideTheme>
+           
             {children}
             <Footer />
-        </ProvideTheme>
           </body>
+        {/* </ProvideTheme> */}
       </ReduxProvider>
     </html>
   );

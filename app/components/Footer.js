@@ -32,6 +32,7 @@ import { MOBILE_SCREEN_WIDTH } from "../../app/constants/screenSize";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import config from "../config/config";
 
 function Footer() {
   const checkContactUs = (searchParam) => {
@@ -42,9 +43,9 @@ function Footer() {
   };
   const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
 
-useEffect(() => {
-  setIsFeedbackVisible(checkContactUs(window?.location.search) || false);
-}, []);
+  useEffect(() => {
+    setIsFeedbackVisible(checkContactUs(window?.location.search) || false);
+  }, []);
   const [loggedInUserRole, setLoggedInUserRole] = useState(
     getLoginDetailFromSession()?.role
   );
@@ -59,23 +60,23 @@ useEffect(() => {
     const handleStorageChange = () => {
       setLoggedInUserRole(getLoginDetailFromSession()?.role);
     };
-    if(typeof window !== "undefined"){
-    window?.addEventListener("storage", handleStorageChange); 
+    if (typeof window !== "undefined") {
+      window?.addEventListener("storage", handleStorageChange);
     }
     return () => {
-      if (typeof window !== "undefined"){
-
+      if (typeof window !== "undefined") {
         window?.removeEventListener("storage", handleStorageChange);
       }
     };
   }, []);
 
   const onClickOnCandidateFooterURL = (value) => {
-    if(typeof window !== "undefined"){
-    const companyNameAndIdFromLocal = localStorage.getItem(
-      STORAGE_KEY.LAST_REVIEW_SEARCH
-    );
-  }
+    let companyNameAndIdFromLocal;
+    if (typeof window !== "undefined") {
+      companyNameAndIdFromLocal = localStorage.getItem(
+        STORAGE_KEY.LAST_REVIEW_SEARCH
+      );
+    }
     if (!companyNameAndIdFromLocal && value.url === URL.EMPLOYER_DETAILS) {
       setShouldShowDialog(true);
     } else if (
@@ -90,7 +91,7 @@ useEffect(() => {
         }
       );
     } else {
-      router.push(value.url);
+      router.push(`${config.ROUTE_BASE}${value.url}`);
     }
   };
 
@@ -149,10 +150,11 @@ useEffect(() => {
             <div className="footer_logo_wrap footer_mobile_wrap">
               <div className="top-wrap">
                 <Image
-                  src={logo.src}
+                  src={logo}
                   alt={UI.ALT_ALIGNMYCAREER}
-                  width={52}
-                  height={30}
+                  style={{
+                    objectFit: "contain",
+                  }}
                   loading="lazy"
                   title={UI.ALT_ALIGNMYCAREER}
                 />
@@ -216,7 +218,7 @@ useEffect(() => {
                     eachElement.id === "affiliateProgram" ? (
                       <li key={index}>
                         <a
-                          href={`${URL.INFORMATION}/${eachElement.id}`}
+                          href={` ${config.ROUTE_BASE}${URL.INFORMATION}/${eachElement.id}`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -294,7 +296,7 @@ useEffect(() => {
                     eachElement.id === "terms" ? (
                       <li key={index}>
                         <a
-                          href={`${URL.INFORMATION}/${eachElement.id}`}
+                          href={`${config.ROUTE_BASE}${URL.INFORMATION}/${eachElement.id}`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -308,7 +310,9 @@ useEffect(() => {
                             setIsFeedbackVisible(true);
                           }}
                         >
-                          <a href={eachElement.url}>{eachElement.label}</a>
+                          <a href={`${config.ROUTE_BASE}${eachElement.url}`}>
+                            {eachElement.label}
+                          </a>
                         </span>
                       </li>
                     ) : eachElement.id === "pricing" ? (
@@ -319,7 +323,7 @@ useEffect(() => {
                               ? URL.PRICING_DASHBOARD
                               : loggedInUserRole === LOGIN_TYPE.EMPLOYER
                               ? URL.PRICING_DASHBOARD
-                              : `${URL.INFORMATION}/${eachElement.id}`
+                              : `${config.ROUTE_BASE}${URL.INFORMATION}/${eachElement.id}`
                           }
                           target={
                             loggedInUserRole === LOGIN_TYPE.CANDIDATE
@@ -332,7 +336,9 @@ useEffect(() => {
                       </li>
                     ) : eachElement.id === "faq" ? (
                       <li key={index}>
-                        <Link href={eachElement.url}>{eachElement.label}</Link>
+                        <Link href={`${config.ROUTE_BASE}${eachElement.url}`}>
+                          {eachElement.label}
+                        </Link>
                       </li>
                     ) : null
                   )}

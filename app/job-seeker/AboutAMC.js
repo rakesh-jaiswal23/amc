@@ -47,7 +47,7 @@ async function AboutAMC({ role }) {
               <div className="right-para">
                 <p>{aboutdata.description}</p>
                 <Link
-                  href={URL.REGISTER}
+                  href={`${config.ROUTE_BASE}${URL.LOGIN}`}
                   rel="noopener noreferrer"
                   className="white-btn"
                 >

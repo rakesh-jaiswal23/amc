@@ -41,8 +41,13 @@ async function Demo({ role }) {
                   <Image
                     src={mobile.src}
                     alt={UI.ALT_APPROACH_SECTION_HOME_IMAGE}
-                    width={100}
-                    height={100}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                    }}
                     loading="lazy"
                   />
                 </div>
@@ -53,7 +58,7 @@ async function Demo({ role }) {
                     <h3 className="section_head">{demodata?.title}</h3>
                     <p>{demodata?.description}</p>
                     <Link
-                      href={URL.REGISTER}
+                      href={`${config.ROUTE_BASE}${URL.REGISTER}`}
                       rel="noopener noreferrer"
                       className="white-btn"
                     >
@@ -76,7 +81,7 @@ async function Demo({ role }) {
                   <div className="left_inner">
                     <p>{UI.EMPLOYER_APPROACH_SECTION_TITLE}</p>
                     <Link
-                      href={URL.LOGIN}
+                      href={`${config.ROUTE_BASE}${URL.LOGIN}`}
                       rel="noopener noreferrer"
                       className="white-btn"
                     >
@@ -89,8 +94,9 @@ async function Demo({ role }) {
                   <Image
                     src={approach.src}
                     alt={UI.ALT_APPROACH_SECTION_HOME_IMAGE}
-                    width={100}
-                    height={100}
+                    width={1000}
+                    height={1000}
+                    layout="intrinsic"
                     loading="lazy"
                   />
                 </div>

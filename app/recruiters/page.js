@@ -28,7 +28,7 @@ export default function HomeBody() {
   return <HomeBodyClient />;
 }
 
-// Client-side component
+
 const HomeBodyClient = () => {
   return (
     <div className="header-css">

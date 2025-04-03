@@ -16,12 +16,11 @@ function WhyAMC(props) {
 
   useEffect(() => {
     if (!role) return;
-    getRequest(`${MAINPAGE_API_URL.MAINPAGE_WHY_AMC}${role}`)
-      .then((data) => {
-        setWhyamcdata(data);
-      });
+    getRequest(`${MAINPAGE_API_URL.MAINPAGE_WHY_AMC}${role}`).then((data) => {
+      setWhyamcdata(data);
+    });
   }, [role]);
-  
+
   const handleAccordionToggle = (index) => {
     setActiveIndex(index === activeIndex ? null : index);
   };
@@ -37,7 +36,13 @@ function WhyAMC(props) {
             <div className="row">
               <div className="col-lg-6">
                 <div className="left-wrapp">
-                  <Image width={100} height={100} src={img6.src} alt={UI.ALT_MYCAREER_IMAGE} />
+                  <Image
+                    width={577}
+                    height={376}
+                    layout="intrinsic"
+                    src={img6.src}
+                    alt={UI.ALT_MYCAREER_IMAGE}
+                  />
                 </div>
               </div>
               <div className="col-lg-6">

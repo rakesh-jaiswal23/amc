@@ -16,6 +16,7 @@ import banner1 from "@/app/assets/banner-1.webp";
 import UI from "@/app/constants/ui";
 import useMobileDevice from "@/app/hooks/useMobileDevice";
 import STORAGE_KEY from "@/app/constants/storageKey";
+import config from "@/app/config/config";
 
 function BannerSlideClient({ role, showText }) {
   const isMobile = useMobileDevice();
@@ -62,7 +63,10 @@ function BannerSlideClient({ role, showText }) {
   };
 
   return (
-    <section className={`${!showText && "banner-inner"} banner`} style={imageStyle}>
+    <section
+      className={`${!showText && "banner-inner"} banner`}
+      style={imageStyle}
+    >
       <div className="container">
         <ul className="bannerSlider">
           <Slider {...settings}>
@@ -76,32 +80,45 @@ function BannerSlideClient({ role, showText }) {
                     <p>{UI.HOME_PAGE_SLIDER_DESCRIPTION_ONE}</p>
                   )}
                   <div
-                    className={`d-flex ${isMobile ? "flex-column" : "flex-row align-items-start"}`}
+                    className={`d-flex ${
+                      isMobile ? "flex-column" : "flex-row align-items-start"
+                    }`}
                   >
-                    <Link href={URL.FIND_JOBS} className="getjob_btn white-btn">
+                    <Link
+                      href={`${config.ROUTE_BASE}${URL.FIND_JOBS}`}
+                      className="getjob_btn white-btn"
+                    >
                       {UI.FIND_JOB}
                       <span /> <span /> <span /> <span />
                     </Link>
                     <Link
-                      href={URL.ASSESSMENT}
-                      className={`${isMobile ? "my-2" : "mx-2"} getjob_btn white-btn`}
+                      href={`${config.ROUTE_BASE}${URL.ASSESSMENT}`}
+                      className={`${
+                        isMobile ? "my-2" : "mx-2"
+                      } getjob_btn white-btn`}
                     >
                       {UI.ASSESSMENTS}
                       <span /> <span /> <span /> <span />
                     </Link>
                     <Link
-                      href={URL.MOCK_INTERVIEW}
-                      className={`getjob_btn white-btn ${isMobile ? "my-1" : ""} ${shouldShow ? "button-pulse" : ""
-                        }`}
+                      href={`${config.ROUTE_BASE}${URL.MOCK_INTERVIEW}`}
+                      className={`getjob_btn white-btn ${
+                        isMobile ? "my-1" : ""
+                      } ${shouldShow ? "button-pulse" : ""}`}
                       onClick={() => {
-                        localStorage.setItem(STORAGE_KEY.IS_CLCIKED_ON_MOCK_INTERVIEW, true);
+                        localStorage.setItem(
+                          STORAGE_KEY.IS_CLCIKED_ON_MOCK_INTERVIEW,
+                          true
+                        );
                         setShouldShow(false);
                       }}
                     >
                       <div>
                         {UI.MOCK_INTERVIEWS}
                         {shouldShow && (
-                          <div style={{ position: "absolute", top: 0, right: 1 }}>
+                          <div
+                            style={{ position: "absolute", top: 0, right: 1 }}
+                          >
                             <CampaignIcon fontSize="10px" />
                           </div>
                         )}
@@ -109,8 +126,10 @@ function BannerSlideClient({ role, showText }) {
                       <span /> <span /> <span /> <span />
                     </Link>
                     <Link
-                      href={URL.CAREER_PATH}
-                      className={`${isMobile ? "my-2" : "mx-2"} getjob_btn white-btn`}
+                      href={`${config.ROUTE_BASE}${URL.CAREER_PATH}`}
+                      className={`${
+                        isMobile ? "my-2" : "mx-2"
+                      } getjob_btn white-btn`}
                     >
                       {UI.CAREER_PATH}
                       <span /> <span /> <span /> <span />
@@ -128,7 +147,7 @@ function BannerSlideClient({ role, showText }) {
                   ) : (
                     <p>{UI.HOME_PAGE_SLIDER_DESCRIPTION_TWO}</p>
                   )}
-                  <Link href={URL.RECRUITERS} className="getjob_btn white-btn">
+                  <Link href={`${config.ROUTE_BASE}${URL.RECRUITERS}`} className="getjob_btn white-btn">
                     {UI.KNOW_MORE}
                     <span /> <span /> <span /> <span />
                   </Link>
@@ -140,7 +159,10 @@ function BannerSlideClient({ role, showText }) {
                 <div className="slide__text">
                   <h2>{UI.HOME_PAGE_SLIDER_TITLE_TEXT_TWO}</h2>
                   {isMobile ? "" : <p>{UI.HOME_PAGE_SLIDER_DESCRIPTION_TWO}</p>}
-                  <Link href={URL.FIND_CANDIDATES} className="getjob_btn white-btn">
+                  <Link
+                    href={`${config.ROUTE_BASE}${URL.FIND_CANDIDATES}`}
+                    className="getjob_btn white-btn"
+                  >
                     {UI.FIND_TALENT}
                     <span /> <span /> <span /> <span />
                   </Link>
@@ -152,7 +174,7 @@ function BannerSlideClient({ role, showText }) {
                 <div className="slide__text">
                   <h2>{UI.HOME_PAGE_SLIDER_TEXT_ONE}</h2>
                   {isMobile ? "" : <p>{UI.HOME_PAGE_SLIDER_DESCRIPTION_ONE}</p>}
-                  <Link href={URL.JOB_SEEKER} className="getjob_btn white-btn">
+                  <Link href={`${config.ROUTE_BASE}${URL.JOB_SEEKER}`} className="getjob_btn white-btn">
                     {UI.KNOW_MORE}
                     <span /> <span /> <span /> <span />
                   </Link>
