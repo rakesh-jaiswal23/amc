@@ -23,6 +23,7 @@ import BlogShare from "./BlogShare";
 import onClickOnLike from "./Blog.helper";
 import STORAGE_KEY from "@/app/constants/storageKey";
 import Image from "next/image";
+import config from "@/app/config/config";
 
 function BlogPage(props) {
   // const { setShowNavBar } = props;
@@ -84,7 +85,7 @@ function BlogPage(props) {
   );
 
   const onClickBlogCard = (value) => {
-    window.location.href = `${URL.BLOG_META}${value}`;
+    window.location.href = `${config.ROUTE_BASE}${URL.BLOG_META}${value}`;
   };
 
   const handleShare = (event, data) => {
@@ -96,7 +97,7 @@ function BlogPage(props) {
 
   const pagination = (pageNo) => {
     setPageNumber(pageNo);
-    router.push(`${URL.BLOG_PAGE}?page=${pageNo}`);
+    router.push(`${config.ROUTE_BASE}${URL.BLOG_PAGE}?page=${pageNo}`);
     // Optionally, if you want to fetch new blogs on pagination:
     // getBlogsBasedOnPage(pageNo);
   };
@@ -234,7 +235,7 @@ function BlogPage(props) {
           {/* View More */}
           {pathname !== URL.BLOG_PAGE && (
             <div
-              onClick={() => router.push(URL.BLOG_PAGE)}
+              onClick={() => router.push(`${config.ROUTE_BASE}${URL.BLOG_PAGE}`)}
               className="viewmore mt-4"
             >
               <span>{UI.VIEW_MORE}...</span>

@@ -14,6 +14,7 @@ import logo from "@/app/assets/logo.webp";
 import UI from "@/app/constants/ui";
 import NewTag from "@/app/components/newTag/NewTag";
 import Image from "next/image";
+import config from "../config/config";
 
 export default function Header() {
   const [show, setShow] = useState(false);
@@ -45,9 +46,9 @@ export default function Header() {
   };
 
   // Provide fallbacks for other environment variables as well
-  const blogLink = process.env.NEXT_PUBLIC_BLOG_URL || "/";
-  const loginLink = process.env.NEXT_PUBLIC_LOGIN_URL || "/";
-  const registerLink = process.env.NEXT_PUBLIC_REGISTER_URL || "/";
+  const blogLink = `${config.ROUTE_BASE}/blog`;
+  const loginLink = `${config.ROUTE_BASE}/login`;
+  const registerLink = `${config.ROUTE_BASE}/register`;
 
   return (
     <>

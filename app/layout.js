@@ -1,11 +1,11 @@
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from "./redux/ReduxProvider";
 
 import Footer from "./components/Footer";
-import { ProvideTheme } from "@/app/config/muiconfig";
+// import { ProvideTheme } from "@/app/config/muiconfig";
 import FontAwesomeLoader from "./config/fontloader";
 
 

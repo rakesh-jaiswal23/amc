@@ -1,3 +1,4 @@
+import config from "@/app/config/config";
 import https from "https";
 
 const agent = new https.Agent({
@@ -6,14 +7,14 @@ const agent = new https.Agent({
 
 async function proxyRequest(request, paramsPromise) {
   // In development, disable TLS rejection warnings
-  if (process.env.NODE_ENV === "development") {
-    process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-  }
+  // if (process.env.NODE_ENV === "development") {
+  //   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+  // }
 
   try {
     // Retrieve the slug parameter from the route
     const { slug: pathSegments = [] } = await paramsPromise;
-    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+    const baseUrl = config.API_BASE;
 
     // Construct the target URL including any search parameters
     const targetUrl = `${baseUrl}/${pathSegments.join("/")}${new URL(
@@ -22,7 +23,7 @@ async function proxyRequest(request, paramsPromise) {
 
     // Clone headers and update the host header if needed
     const headers = new Headers(request.headers);
-    headers.set("host", process.env.NEXT_PUBLIC_API_BASE);
+    headers.set("host", config.NEXT_PUBLIC_API_BASE);
 
     const init = {
       method: request.method,
